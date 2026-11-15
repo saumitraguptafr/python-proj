@@ -1,0 +1,46 @@
+#format specifiers = {value: flags} format a value based on what flags are inserted- used in f""
+#things to replace "flags"
+#.(number)f = round to that many decimal places (fixed point)
+# :(number) = allocates that many spaces
+# :03 = allocate and zero pad that many spaces
+# :< = left justify
+# :> = right justify
+# :^ = center allign
+# :+ = use a plus sign to incidate postive no
+# := = place a sign to the leftmost posn
+# :  = insert space before postibe no
+# :, = comma seprartor
+
+#EXAMPLE
+price1 = 3.14569
+price2 = -98.765
+price3= 12.34
+price4 = 12300.098
+#rounding up
+print(f"Price 1 is {price1:.2f}")
+print(f"Price 2 is {price2:.2f}")
+print(f"Price 3 is {price3:.2f}")
+#additon of spaces / allocating space- total charcters become the no metioned, this is done by adding spaces
+print(f" price 1 is {price1:10}")
+print(f" price 2 is {price2:10}")
+print(f" price 3 is {price3:10}")
+#zero padding- replaces space with zero
+print(f" price 1 is {price1:010}")
+#left allignment- spaces are there but sintead of being in the front the space are now are in left side
+print(f"price 1 is {price1:<10}")
+#right allignement is the default like in allocation of spaces
+#center allignment- spaces are there, but now instead of all spaces being in one side, they are on either side, putting the no in middle
+print(f"price 1 is {price1:^10}")
+#sign placement- shows postive sign leftmost for postive no and - sign for negtive no
+print(f"price 1 is {price1:+}")
+print(f"price 2 is {price2:+}")
+print(f"price 3 is {price3:+}")
+#sign placemnt, version 2- this time postive signs are hidden, negtive sign still shows
+print(f"price 1 is {price1: }")
+print(f"price 2 is {price2: }")
+print(f"price 3 is {price3: }")
+#comma placemrnt- adds a comma every thousand place
+print(f"pirce 4 is {price4:,}")
+#adding two flags at the same time
+print(f"price 4 is {price4:,.2f}")
+print(f"price 4 is {price4:+,.2f}")
